@@ -1,0 +1,96 @@
+#include <iostream>
+#include <string>
+#include <stdio.h>
+#include <string>
+using namespace std;
+
+struct cita
+{
+    string hora, nombre, tratamiento, descripcion;
+    int preciot, cantidad, preciou, total, suma;
+};
+int main()
+{
+    int opcion;
+    int j;
+    cita anual[3];
+    int menu = 0;
+
+    do
+    {
+        cout << "***SIMULADOR DE CITA***" << endl;
+
+        cout << "Puchale 1 para agendar cita" << endl;
+
+        cout << "Puchale 2 para modificar cita" << endl;
+
+        cout << "Puchale 3 para eliminar cita" << endl;
+
+        cout << "Puchale 4 para lista de citas vigentes" << endl;
+
+        cout << "Puchale 5 para limpiar pantalla" << endl;
+
+        cout << "Puchale 6 para salir" << endl;
+        cin >> opcion;
+
+        switch (opcion)
+        {
+        case 1:
+            for (j = 0; j < 3; j++)
+            {
+                cout << "Ingrese nombre del paciente" << endl;
+                cin.ignore();
+                getline(cin, anual[j].nombre, '\n');
+                cout << "Ingrese hora del tratamiento" << endl;
+                getline(cin, anual[j].hora, '\n');
+                cout << "Ingrese nombre del tratamiento" << endl;
+                getline(cin, anual[j].tratamiento, '\n');
+                cout << "Ingrese la descripcion" << endl;
+                getline(cin, anual[j].descripcion, '\n');
+                cout << "Ingrese precio unitario tratamiento" << endl;
+                cin >> anual[j].preciot;
+                cout << "Ingrese cantidad del tratamiento" << endl;
+                cin >> anual[j].cantidad;
+                cout << "Ingrese precio unitario" << endl;
+                cin >> anual[j].preciou;
+
+                anual[j].suma = anual[j].preciot + anual[j].preciou;
+                cout << anual[j].suma << endl;
+            }
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            for (j = 0; j < 3; j++)
+            {
+                cout << "cita n." << j + 1 << endl;
+                cout << "nombre" << endl;
+                cout << anual[j].nombre << endl;
+                cout << "hora" << endl;
+                cout << anual[j].hora << endl;
+                cout << "tratamiento" << endl;
+                cout << anual[j].tratamiento << endl;
+                cout << "descripcion" << endl;
+                cout << anual[j].descripcion << endl;
+                cout << "preciot" << endl;
+                cout << anual[j].preciot << endl;
+                cout << "cantidad" << endl;
+                cout << anual[j].cantidad << endl;
+                cout << "preciou" << endl;
+                cout << anual[j].preciou << endl;
+            }
+            break;
+        case 5:
+            break;
+        case 6:
+            menu = 10;
+            break;
+        default:
+            cout << "Ingrese una opcion valida" << endl;
+
+        }
+    } while (menu == 0);
+    return 0;
+}
