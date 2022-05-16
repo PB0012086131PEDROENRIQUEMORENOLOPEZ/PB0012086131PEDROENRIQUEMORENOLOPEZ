@@ -22,17 +22,17 @@ int main()
     int opcion;
     cout << "***SIMULADOR DE CITAS***" << endl;
 
-    cout << "Puchale 1 para tener una cita" << endl;
+    cout << "Presione 1 para tener una cita" << endl;
 
-    cout << "Puchale 2 para modificar cita" << endl;
+    cout << "Presione 2 para modificar cita" << endl;
 
-    cout << "Puchale 3 para eliminar la cita" << endl;
+    cout << "Presione 3 para eliminar la cita" << endl;
 
-    cout << "Puchale 4 para lista de citas vigentes" << endl;
+    cout << "Presione 4 para lista de citas vigentes" << endl;
 
-    cout << "Puchale 5 para borrar todo lo que escribiste" << endl;
+    cout << "Presione 5 para borrar todo lo que escribiste" << endl;
 
-    cout << "Puchale 6 para salir" << endl;
+    cout << "Presione 6 para salir" << endl;
     cin >> opcion;
 
     switch (opcion)
@@ -96,7 +96,7 @@ void alta()
         cout << "Con un iva de:" << iva[ponme] << endl;
         total[ponme] = iva[ponme] + subt[ponme];
         cout << "El total es de:" << total[ponme] << endl;
-        cout << "Quiere agendar otra cita? puche 0 si ese es el caso, si no puche otro numero" << endl;
+        cout << "Quiere agendar otra cita? presione 0 si ese es el caso, si no presione otro numero" << endl;
         cin >> opcion;
     } while (opcion == 0);
 }
@@ -124,7 +124,7 @@ void impresion()
     int text, i{};
     string text2;
 
-    archivo.open("citas calientes.txt", ios::out);
+    archivo.open("citas.txt", ios::out);
 
     if (archivo.fail())
     {
